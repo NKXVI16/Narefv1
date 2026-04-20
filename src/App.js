@@ -1,5 +1,5 @@
-import NAref from './NAref';
+import NArchRef from './NAref';
 
 export default function App() {
-  return <NAref />;
+  return <NArchRef />;
 }
