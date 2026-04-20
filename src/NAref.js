@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 
+// All images from Wikimedia Commons - open license, no CORS issues
 const PROJECTS = [
   {
     id: 1,
@@ -20,13 +21,13 @@ const PROJECTS = [
     awards: "Pritzker Architecture Prize 2016 (Aravena)",
     tags: ["incremental", "social", "latin america", "affordable", "self-build"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/10775/quinta-monroy-elemental" },
-      { label: "Plataforma Arquitectura", url: "https://www.plataformaarquitectura.cl/cl/02-2822/quinta-monroy-elemental" },
-      { label: "Dezeen", url: "https://www.dezeen.com/tag/elemental/" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Quinta+Monroy" },
+      { label: "Dezeen", url: "https://www.dezeen.com/?s=Quinta+Monroy" },
+      { label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Quinta_Monroy" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Quinta+Monroy",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Plan+View",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Interior",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Quinta_Monroy_ELEMENTAL.jpg/800px-Quinta_Monroy_ELEMENTAL.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Quinta_Monroy_ELEMENTAL.jpg/400px-Quinta_Monroy_ELEMENTAL.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Quinta_Monroy_ELEMENTAL.jpg/400px-Quinta_Monroy_ELEMENTAL.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -48,13 +49,13 @@ const PROJECTS = [
     awards: "Nominated Mies van der Rohe Award 2007",
     tags: ["circular", "collective", "student", "nordic", "courtyard"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/107/tietgen-dormitory-lundgaard-tranberg-arkitekter" },
-      { label: "Dezeen", url: "https://www.dezeen.com/2012/02/08/tietgen-dormitory-by-lundgaard-tranberg/" },
-      { label: "Divisare", url: "https://divisare.com/projects/207715-lundgaard-tranberg-arkitekter-tietgen-dormitory" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Tietgen+Dormitory" },
+      { label: "Dezeen", url: "https://www.dezeen.com/?s=Tietgen+Dormitory" },
+      { label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Tietgen_Dormitory" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Tietgen+Dormitory",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Circular+Plan",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Courtyard",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Tietgen_Dormitory.jpg/800px-Tietgen_Dormitory.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Tietgen_Dormitory.jpg/400px-Tietgen_Dormitory.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Tietgen_Dormitory.jpg/400px-Tietgen_Dormitory.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -76,13 +77,13 @@ const PROJECTS = [
     awards: "National Historic Site of Canada 2009",
     tags: ["brutalist", "modular", "prefab", "iconic", "experimental", "terrace"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/86872/habitat-67-moshe-safdie" },
-      { label: "Dezeen", url: "https://www.dezeen.com/tag/habitat-67/" },
-      { label: "Archello", url: "https://archello.com/project/habitat-67" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Habitat+67" },
+      { label: "Dezeen", url: "https://www.dezeen.com/?s=Habitat+67" },
+      { label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Habitat_67" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Habitat+67",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Section+View",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Terrace+Garden",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Habitat_67%2C_southwest_view.jpg/800px-Habitat_67%2C_southwest_view.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Habitat67_crop.jpg/400px-Habitat67_crop.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Habitat_67%2C_southwest_view.jpg/400px-Habitat_67%2C_southwest_view.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -104,13 +105,13 @@ const PROJECTS = [
     awards: "World Architecture Festival — Best Residential Building 2011",
     tags: ["mixed-use", "figure-eight", "nordic", "BIG", "promenade", "rooftop"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/107101/8-house-big" },
-      { label: "Dezeen", url: "https://www.dezeen.com/2010/10/26/8-house-by-big/" },
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=8+House+BIG" },
+      { label: "Dezeen", url: "https://www.dezeen.com/?s=8+House+BIG" },
       { label: "BIG", url: "https://big.dk/projects/8-house" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=8+House+BIG",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Figure+8+Plan",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Promenade",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/8_House_Copenhagen.jpg/800px-8_House_Copenhagen.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/8_House_Copenhagen.jpg/400px-8_House_Copenhagen.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/8_House_Copenhagen.jpg/400px-8_House_Copenhagen.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -132,12 +133,12 @@ const PROJECTS = [
     awards: "Not Available",
     tags: ["incremental", "social", "mexico", "affordable", "self-build", "elemental"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/82424/monterrey-housing-elemental" },
-      { label: "Plataforma Arquitectura", url: "https://www.plataformaarquitectura.cl/cl/02-57076/vivienda-monterrey-elemental" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Monterrey+Housing+Elemental" },
+      { label: "Plataforma Arquitectura", url: "https://www.plataformaarquitectura.cl/cl/search?q=Monterrey+Elemental" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Monterrey+Housing",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Half+House",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Street+View",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Quinta_Monroy_ELEMENTAL.jpg/800px-Quinta_Monroy_ELEMENTAL.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Quinta_Monroy_ELEMENTAL.jpg/400px-Quinta_Monroy_ELEMENTAL.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Quinta_Monroy_ELEMENTAL.jpg/400px-Quinta_Monroy_ELEMENTAL.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -159,13 +160,12 @@ const PROJECTS = [
     awards: "Not Available",
     tags: ["social", "facade", "bamboo", "mediterranean", "FOA", "screen"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/11138/carabanchel-housing-foreign-office-architects" },
-      { label: "Dezeen", url: "https://www.dezeen.com/2007/09/10/carabanchel-housing-by-foreign-office-architects/" },
-      { label: "Divisare", url: "https://divisare.com/projects/carabanchel-social-housing" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Carabanchel+Housing" },
+      { label: "Dezeen", url: "https://www.dezeen.com/?s=Carabanchel+Housing" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Carabanchel+Housing",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Bamboo+Screen",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Courtyard",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Carabanchel_Housing_FOA.jpg/800px-Carabanchel_Housing_FOA.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Carabanchel_Housing_FOA.jpg/400px-Carabanchel_Housing_FOA.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Carabanchel_Housing_FOA.jpg/400px-Carabanchel_Housing_FOA.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -187,13 +187,13 @@ const PROJECTS = [
     awards: "Not Available",
     tags: ["mixed-use", "MVRDV", "waterfront", "colourful", "neighbourhood", "amsterdam"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/104872/silodam-mvrdv" },
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Silodam+MVRDV" },
       { label: "MVRDV", url: "https://www.mvrdv.nl/projects/111/silodam" },
-      { label: "Dezeen", url: "https://www.dezeen.com/tag/mvrdv/" }
+      { label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Silodam" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Silodam+MVRDV",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Facade+Grid",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Waterfront",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Silodam_Amsterdam.jpg/800px-Silodam_Amsterdam.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Silodam_Amsterdam.jpg/400px-Silodam_Amsterdam.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Silodam_Amsterdam.jpg/400px-Silodam_Amsterdam.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -215,13 +215,13 @@ const PROJECTS = [
     awards: "Designated culturally significant prior to demolition in 2022",
     tags: ["metabolism", "capsule", "japan", "iconic", "experimental", "prefab", "tokyo"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/110745/ad-classics-nakagin-capsule-tower-kisho-kurokawa" },
-      { label: "Dezeen", url: "https://www.dezeen.com/tag/nakagin-capsule-tower/" },
-      { label: "Archello", url: "https://archello.com/project/nakagin-capsule-tower" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Nakagin+Capsule+Tower" },
+      { label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower" },
+      { label: "Dezeen", url: "https://www.dezeen.com/?s=Nakagin+Capsule+Tower" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Nakagin+Capsule+Tower",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Capsule+Detail",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Core+Structure",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Nakagin.jpg/600px-Nakagin.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Nakagin_Capsule_Tower_03.jpg/400px-Nakagin_Capsule_Tower_03.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Nakagin.jpg/400px-Nakagin.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -243,13 +243,13 @@ const PROJECTS = [
     awards: "Grade II* Listed Building",
     tags: ["brutalist", "public housing", "london", "post-war", "listed", "walkways"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/tag/golden-lane-estate" },
-      { label: "e-architect", url: "https://www.e-architect.com/london/golden-lane-estate" },
-      { label: "Dezeen", url: "https://www.dezeen.com/tag/golden-lane-estate/" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Golden+Lane+Estate" },
+      { label: "Wikipedia", url: "https://en.wikipedia.org/wiki/Golden_Lane_Estate" },
+      { label: "Dezeen", url: "https://www.dezeen.com/?s=Golden+Lane+Estate" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Golden+Lane+Estate",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Walkway+Deck",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Courtyard",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Golden_Lane_Estate_from_Fann_Street.jpg/800px-Golden_Lane_Estate_from_Fann_Street.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Golden_Lane_Estate_from_Fann_Street.jpg/400px-Golden_Lane_Estate_from_Fann_Street.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Golden_Lane_Estate_from_Fann_Street.jpg/400px-Golden_Lane_Estate_from_Fann_Street.jpg",
     last_updated: "2025-01-10"
   },
   {
@@ -271,12 +271,12 @@ const PROJECTS = [
     awards: "Not Available",
     tags: ["waterfront", "vienna", "minimalist", "urban edge", "contemporary"],
     sources: [
-      { label: "Archdaily", url: "https://www.archdaily.com/tag/adolf-krischanitz" },
-      { label: "Divisare", url: "https://divisare.com/authors/adolf-krischanitz" }
+      { label: "Archdaily", url: "https://www.archdaily.com/search/projects?q=Wohnpark+Neue+Donau" },
+      { label: "Divisare", url: "https://divisare.com/search?q=Krischanitz" }
     ],
-    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Wohnpark+Neue+Donau",
-    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Waterfront+Edge",
-    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Facade+Detail",
+    image_cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Wohnpark_Neue_Donau_Wien.jpg/800px-Wohnpark_Neue_Donau_Wien.jpg",
+    image_2: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Wohnpark_Neue_Donau_Wien.jpg/400px-Wohnpark_Neue_Donau_Wien.jpg",
+    image_3: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Wohnpark_Neue_Donau_Wien.jpg/400px-Wohnpark_Neue_Donau_Wien.jpg",
     last_updated: "2025-01-15"
   }
 ];
@@ -295,6 +295,8 @@ function filterByYear(project, range) {
   return true;
 }
 
+const FALLBACK = "https://placehold.co/600x400/2a2a20/c8a96e?text=No+Image";
+
 export default function NAref() {
   const [search, setSearch] = useState("");
   const [typology, setTypology] = useState("All");
@@ -303,6 +305,7 @@ export default function NAref() {
   const [selected, setSelected] = useState(null);
   const [favourites, setFavourites] = useState([]);
   const [copied, setCopied] = useState(false);
+  const [imgErrors, setImgErrors] = useState({});
   const [activeTab, setActiveTab] = useState("all");
 
   const filtered = useMemo(() => {
@@ -322,10 +325,12 @@ export default function NAref() {
     setFavourites(f => f.includes(id) ? f.filter(x => x !== id) : [...f, id]);
   };
 
+  const imgSrc = (url, key) => imgErrors[key] ? FALLBACK : url;
+  const onImgError = (key) => setImgErrors(e => ({ ...e, [key]: true }));
+
   const copyData = () => {
     if (!selected) return;
-    const text = JSON.stringify(selected, null, 2);
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(JSON.stringify(selected, null, 2));
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -334,9 +339,8 @@ export default function NAref() {
     if (!selected) return;
     const content = `NAref — Housing Architecture Reference\n${"=".repeat(50)}\n\nPROJECT: ${selected.name}\nARCHITECT: ${selected.architect}\nYEAR: ${selected.year}\nLOCATION: ${selected.location}\nTYPOLOGY: ${selected.typology}\nSTYLE: ${selected.style}\nUNITS: ${selected.units}\nTOTAL AREA: ${selected.total_area}\nFLOORS: ${selected.floors}\n\nCONCEPT\n${selected.concept}\n\nSITE STRATEGY\n${selected.site_strategy}\n\nKEY DESIGN MOVES\n${selected.key_design_moves.map((m, i) => `${i + 1}. ${m}`).join("\n")}\n\nMATERIALS\n${selected.materials.join(", ")}\n\nPROGRAM\n${selected.program}\n\nAWARDS\n${selected.awards}\n\nSOURCES\n${selected.sources.map(s => `${s.label}: ${s.url}`).join("\n")}\n\nTAGS\n${selected.tags.join(", ")}\n\n${"=".repeat(50)}\nGenerated by NAref`;
     const blob = new Blob([content], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url;
+    a.href = URL.createObjectURL(blob);
     a.download = `NAref_${selected.name.replace(/\s+/g, "_")}.txt`;
     a.click();
   };
@@ -346,28 +350,25 @@ export default function NAref() {
   return (
     <div style={{ fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, serif", background: "#f5f0e8", minHeight: "100vh", color: "#1a1a14" }}>
 
-      {/* Top bar */}
       <div style={{ background: "#1a1a14", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "52px" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
-          <span style={{ fontSize: "18px", color: "#f5f0e8", letterSpacing: "3px", fontWeight: "400" }}>NAref</span>
+          <span style={{ fontSize: "18px", color: "#f5f0e8", letterSpacing: "3px" }}>NAref</span>
           <span style={{ fontSize: "10px", color: "#5a5a4a", letterSpacing: "3px", textTransform: "uppercase" }}>Housing Archive</span>
         </div>
         <div style={{ fontSize: "10px", color: "#5a5a4a", letterSpacing: "2px" }}>LAST UPDATED: {lastUpdated}</div>
       </div>
 
-      {/* Hero */}
       <div style={{ padding: "48px 40px 36px", borderBottom: "1px solid #ddd8cc", background: "linear-gradient(180deg, #ede8e0 0%, #f5f0e8 100%)" }}>
         <div style={{ maxWidth: "560px" }}>
-          <h1 style={{ margin: "0 0 8px", fontSize: "40px", fontWeight: "400", letterSpacing: "-1px", lineHeight: "1.1", color: "#1a1a14" }}>Housing<br />Reference Library</h1>
+          <h1 style={{ margin: "0 0 8px", fontSize: "40px", fontWeight: "400", letterSpacing: "-1px", lineHeight: "1.1" }}>Housing<br />Reference Library</h1>
           <p style={{ margin: "0 0 28px", fontSize: "14px", color: "#8a8a7a", lineHeight: "1.7", maxWidth: "440px" }}>Structured architectural data for students — concept, materials, program, and design moves from the world's most significant housing projects.</p>
           <div style={{ position: "relative", maxWidth: "480px" }}>
-            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search by project, architect, concept, or tag..." style={{ width: "100%", padding: "14px 48px 14px 18px", border: "1px solid #ccc8bc", background: "#fff", fontSize: "13px", fontFamily: "inherit", color: "#1a1a14", outline: "none", boxSizing: "border-box", letterSpacing: "0.3px" }} />
-            <span style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", color: "#aaa", fontSize: "16px" }}>⌕</span>
+            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search by project, architect, concept, or tag..." style={{ width: "100%", padding: "14px 48px 14px 18px", border: "1px solid #ccc8bc", background: "#fff", fontSize: "13px", fontFamily: "inherit", color: "#1a1a14", outline: "none", boxSizing: "border-box" }} />
+            <span style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", color: "#aaa" }}>⌕</span>
           </div>
         </div>
       </div>
 
-      {/* Filters */}
       <div style={{ padding: "16px 40px", borderBottom: "1px solid #ddd8cc", display: "flex", gap: "24px", alignItems: "center", flexWrap: "wrap", background: "#f5f0e8" }}>
         {[
           { label: "Typology", value: typology, set: setTypology, options: TYPOLOGIES },
@@ -388,37 +389,28 @@ export default function NAref() {
             </button>
           ))}
         </div>
-        <div style={{ fontSize: "11px", color: "#aaa8a0", letterSpacing: "1px" }}>{filtered.length} project{filtered.length !== 1 ? "s" : ""}</div>
+        <div style={{ fontSize: "11px", color: "#aaa8a0" }}>{filtered.length} project{filtered.length !== 1 ? "s" : ""}</div>
       </div>
 
       <div style={{ display: "flex", minHeight: "calc(100vh - 260px)" }}>
-
-        {/* Grid */}
         <div style={{ flex: 1, padding: "32px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "24px", alignContent: "start" }}>
-          {filtered.length === 0 ? (
-            <div style={{ gridColumn: "1/-1", textAlign: "center", padding: "80px 0", color: "#aaa" }}>
-              <div style={{ fontSize: "32px", marginBottom: "16px" }}>◻</div>
-              <div style={{ fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase" }}>No projects found</div>
-            </div>
-          ) : filtered.map(p => (
+          {filtered.map(p => (
             <div key={p.id} onClick={() => setSelected(p)} style={{ background: "#fff", border: selected?.id === p.id ? "2px solid #1a1a14" : "1px solid #ddd8cc", cursor: "pointer", transition: "all 0.15s", overflow: "hidden" }}>
-              <div style={{ height: "180px", overflow: "hidden", position: "relative" }}>
-                <img src={p.image_cover} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                <button onClick={e => toggleFav(p.id, e)} style={{ position: "absolute", top: "10px", right: "10px", background: "rgba(255,255,255,0.9)", border: "none", width: "28px", height: "28px", cursor: "pointer", fontSize: "14px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ height: "180px", overflow: "hidden", position: "relative", background: "#e8e4dc" }}>
+                <img src={imgSrc(p.image_cover, `${p.id}_c`)} onError={() => onImgError(`${p.id}_c`)} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <button onClick={e => toggleFav(p.id, e)} style={{ position: "absolute", top: "10px", right: "10px", background: "rgba(255,255,255,0.9)", border: "none", width: "28px", height: "28px", cursor: "pointer", fontSize: "14px" }}>
                   {favourites.includes(p.id) ? "★" : "☆"}
                 </button>
                 <div style={{ position: "absolute", bottom: "10px", left: "10px", background: "rgba(26,26,20,0.85)", color: "#f5f0e8", fontSize: "9px", letterSpacing: "2px", padding: "4px 8px", textTransform: "uppercase" }}>{p.typology}</div>
               </div>
               <div style={{ padding: "16px 18px 14px" }}>
-                <div style={{ fontSize: "15px", fontWeight: "400", marginBottom: "4px", lineHeight: "1.3" }}>{p.name}</div>
+                <div style={{ fontSize: "15px", marginBottom: "4px" }}>{p.name}</div>
                 <div style={{ fontSize: "12px", color: "#8a8a7a", marginBottom: "10px" }}>{p.architect} · {p.year}</div>
                 <div style={{ fontSize: "11px", color: "#aaa8a0", marginBottom: "12px", lineHeight: "1.6", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{p.concept}</div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginBottom: "12px" }}>
-                  {p.tags.slice(0, 3).map((t, i) => (
-                    <span key={i} style={{ fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", padding: "2px 7px", border: "1px solid #ddd8cc", color: "#8a8a7a" }}>{t}</span>
-                  ))}
+                  {p.tags.slice(0, 3).map((t, i) => <span key={i} style={{ fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", padding: "2px 7px", border: "1px solid #ddd8cc", color: "#8a8a7a" }}>{t}</span>)}
                 </div>
-                <div style={{ fontSize: "10px", color: "#bbb8b0", letterSpacing: "1px", borderTop: "1px solid #eee8e0", paddingTop: "10px", display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                <div style={{ borderTop: "1px solid #eee8e0", paddingTop: "10px", display: "flex", gap: "10px", flexWrap: "wrap" }}>
                   {p.sources.map((s, i) => (
                     <a key={i} href={s.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{ color: "#c8a030", textDecoration: "none", fontSize: "10px" }}>↗ {s.label}</a>
                   ))}
@@ -428,18 +420,17 @@ export default function NAref() {
           ))}
         </div>
 
-        {/* Detail panel */}
         {selected && (
           <div style={{ width: "400px", flexShrink: 0, borderLeft: "1px solid #ddd8cc", background: "#fff", overflowY: "auto", position: "sticky", top: 0, maxHeight: "calc(100vh - 52px)" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px" }}>
-              <div style={{ gridColumn: "1/-1", overflow: "hidden" }}>
-                <img src={selected.image_cover} alt="" style={{ width: "100%", height: "150px", objectFit: "cover" }} />
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", background: "#e8e4dc" }}>
+              <div style={{ gridColumn: "1/-1", height: "150px", overflow: "hidden" }}>
+                <img src={imgSrc(selected.image_cover, `${selected.id}_dc`)} onError={() => onImgError(`${selected.id}_dc`)} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
-              <div style={{ overflow: "hidden", height: "68px" }}>
-                <img src={selected.image_2} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <div style={{ height: "68px", overflow: "hidden" }}>
+                <img src={imgSrc(selected.image_2, `${selected.id}_d2`)} onError={() => onImgError(`${selected.id}_d2`)} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
-              <div style={{ overflow: "hidden", height: "68px" }}>
-                <img src={selected.image_3} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <div style={{ height: "68px", overflow: "hidden" }}>
+                <img src={imgSrc(selected.image_3, `${selected.id}_d3`)} onError={() => onImgError(`${selected.id}_d3`)} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
             </div>
 
@@ -447,7 +438,7 @@ export default function NAref() {
               {[
                 { label: copied ? "Copied!" : "Copy Data", action: copyData },
                 { label: "Download", action: downloadTxt },
-                { label: favourites.includes(selected.id) ? "★ Saved" : "☆ Save", action: (e) => toggleFav(selected.id, { stopPropagation: () => {} }) }
+                { label: favourites.includes(selected.id) ? "★ Saved" : "☆ Save", action: () => toggleFav(selected.id, { stopPropagation: () => {} }) }
               ].map((btn, i) => (
                 <button key={i} onClick={btn.action} style={{ flex: 1, padding: "10px 0", background: "transparent", border: "none", borderRight: i < 2 ? "1px solid #eee8e0" : "none", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#8a8a7a", cursor: "pointer", fontFamily: "inherit" }}>{btn.label}</button>
               ))}
@@ -462,7 +453,7 @@ export default function NAref() {
                 {[{ l: "Units", v: selected.units }, { l: "Area", v: selected.total_area }, { l: "Floors", v: selected.floors }, { l: "Style", v: selected.style.split(" / ")[0] }].map((s, i) => (
                   <div key={i} style={{ background: "#fff", padding: "12px 14px" }}>
                     <div style={{ fontSize: "9px", letterSpacing: "2px", color: "#aaa", textTransform: "uppercase", marginBottom: "4px" }}>{s.l}</div>
-                    <div style={{ fontSize: "13px", color: "#1a1a14" }}>{s.v}</div>
+                    <div style={{ fontSize: "13px" }}>{s.v}</div>
                   </div>
                 ))}
               </div>
@@ -478,7 +469,7 @@ export default function NAref() {
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Key Design Moves</div>
                 {selected.key_design_moves.map((m, i) => (
                   <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "8px" }}>
-                    <span style={{ fontSize: "11px", color: "#c8a030", flexShrink: 0, marginTop: "1px" }}>0{i + 1}</span>
+                    <span style={{ fontSize: "11px", color: "#c8a030", flexShrink: 0 }}>0{i + 1}</span>
                     <span style={{ fontSize: "12px", color: "#4a4a3a", lineHeight: "1.7" }}>{m}</span>
                   </div>
                 ))}
@@ -487,25 +478,21 @@ export default function NAref() {
               <div style={{ marginBottom: "20px" }}>
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Materials</div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                  {selected.materials.map((m, i) => (
-                    <span key={i} style={{ fontSize: "10px", padding: "4px 10px", border: "1px solid #ddd8cc", color: "#6a6a5a", letterSpacing: "1px" }}>{m}</span>
-                  ))}
+                  {selected.materials.map((m, i) => <span key={i} style={{ fontSize: "10px", padding: "4px 10px", border: "1px solid #ddd8cc", color: "#6a6a5a" }}>{m}</span>)}
                 </div>
               </div>
 
               <div style={{ marginBottom: "20px" }}>
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Tags</div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                  {selected.tags.map((t, i) => (
-                    <span key={i} style={{ fontSize: "10px", padding: "4px 10px", background: "#f5f0e8", color: "#8a8a7a", letterSpacing: "1px" }}>{t}</span>
-                  ))}
+                  {selected.tags.map((t, i) => <span key={i} style={{ fontSize: "10px", padding: "4px 10px", background: "#f5f0e8", color: "#8a8a7a" }}>{t}</span>)}
                 </div>
               </div>
 
               <div style={{ paddingTop: "16px", borderTop: "1px solid #eee8e0" }}>
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Sources</div>
                 {selected.sources.map((s, i) => (
-                  <a key={i} href={s.url} target="_blank" rel="noreferrer" style={{ display: "block", fontSize: "11px", color: "#c8a030", marginBottom: "8px", textDecoration: "none" }}>↗ {s.label} — {s.url}</a>
+                  <a key={i} href={s.url} target="_blank" rel="noreferrer" style={{ display: "block", fontSize: "11px", color: "#c8a030", marginBottom: "8px", textDecoration: "none" }}>↗ {s.label}</a>
                 ))}
               </div>
             </div>
