@@ -13,20 +13,20 @@ const PROJECTS = [
     total_area: "3,500 sqm",
     floors: "2",
     concept: "Each family received half a well-built house — the structurally complex half — with space designed for self-build expansion. The project reframes social housing as an investment framework, not a welfare product.",
-    key_design_moves: [
-      "Shared party walls reduce construction cost per unit",
-      "Structural frame pre-built for future vertical expansion",
-      "Dense urban infill maintains city connectivity"
-    ],
+    key_design_moves: ["Shared party walls reduce construction cost per unit","Structural frame pre-built for future vertical expansion","Dense urban infill maintains city connectivity"],
     materials: ["Reinforced concrete", "Masonry block", "Corrugated metal"],
     site_strategy: "Dense urban plot within existing city fabric, preserving resident proximity to jobs and services rather than relocating to periphery.",
     program: "93 residential units with shared open space and incremental expansion provision",
     awards: "Pritzker Architecture Prize 2016 (Aravena)",
     tags: ["incremental", "social", "latin america", "affordable", "self-build"],
-    sources: ["archdaily.com", "plataformaarquitectura.cl", "dezeen.com"],
-    image_cover: "https://images.adsttc.com/media/images/5e77/1304/b357/6520/1600/0015/large_jpg/portada_AA175-Quinta-Monroy-ELEMENTAL.jpg",
-    image_2: "https://images.adsttc.com/media/images/5e77/12e3/b357/6520/1600/0013/large_jpg/AA175-Quinta-Monroy-ELEMENTAL.jpg",
-    image_3: "https://images.adsttc.com/media/images/5e77/1320/b357/6520/1600/0017/large_jpg/AA175-Quinta-Monroy-ELEMENTAL.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/10775/quinta-monroy-elemental" },
+      { label: "Plataforma Arquitectura", url: "https://www.plataformaarquitectura.cl/cl/02-2822/quinta-monroy-elemental" },
+      { label: "Dezeen", url: "https://www.dezeen.com/tag/elemental/" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Quinta+Monroy",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Plan+View",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Interior",
     last_updated: "2025-01-10"
   },
   {
@@ -41,20 +41,20 @@ const PROJECTS = [
     total_area: "24,700 sqm",
     floors: "7",
     concept: "A circular building form mediates between the individual and the collective — private rooms face outward to the city while shared kitchens and terraces project inward to a communal courtyard, creating layered social thresholds.",
-    key_design_moves: [
-      "Circular plan creates strong collective identity",
-      "Projecting communal volumes break the ring's regularity",
-      "Inward courtyard acts as shared social heart"
-    ],
+    key_design_moves: ["Circular plan creates strong collective identity","Projecting communal volumes break the ring's regularity","Inward courtyard acts as shared social heart"],
     materials: ["Brick", "Copper", "Concrete", "Timber"],
     site_strategy: "Placed at the edge of a new university district, the circular form creates a landmark while its courtyard provides sheltered semi-public space.",
     program: "360 student rooms, communal kitchens per floor, music rooms, gym, common hall",
     awards: "Nominated Mies van der Rohe Award 2007",
     tags: ["circular", "collective", "student", "nordic", "courtyard"],
-    sources: ["archdaily.com", "dezeen.com", "divisare.com"],
-    image_cover: "https://images.adsttc.com/media/images/5196/c9f2/b3fc/4b00/0001/0063/large_jpg/stringio.jpg",
-    image_2: "https://images.adsttc.com/media/images/5196/ca27/b3fc/4b00/0001/0065/large_jpg/stringio.jpg",
-    image_3: "https://images.adsttc.com/media/images/5196/ca4e/b3fc/4b00/0001/0067/large_jpg/stringio.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/107/tietgen-dormitory-lundgaard-tranberg-arkitekter" },
+      { label: "Dezeen", url: "https://www.dezeen.com/2012/02/08/tietgen-dormitory-by-lundgaard-tranberg/" },
+      { label: "Divisare", url: "https://divisare.com/projects/207715-lundgaard-tranberg-arkitekter-tietgen-dormitory" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Tietgen+Dormitory",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Circular+Plan",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Courtyard",
     last_updated: "2025-01-10"
   },
   {
@@ -69,20 +69,20 @@ const PROJECTS = [
     total_area: "37,161 sqm",
     floors: "12",
     concept: "A utopian vision to combine the qualities of a suburban house — garden, privacy, fresh air — with the density and urban connectivity of an apartment building, achieved through stacking prefabricated concrete modules.",
-    key_design_moves: [
-      "354 prefabricated concrete boxes assembled in 3D array",
-      "Each unit's roof becomes the next unit's garden terrace",
-      "Pedestrian streets and bridges thread through the structure"
-    ],
+    key_design_moves: ["354 prefabricated concrete boxes assembled in 3D array","Each unit's roof becomes the next unit's garden terrace","Pedestrian streets and bridges thread through the structure"],
     materials: ["Precast concrete", "Steel connections", "Glass"],
     site_strategy: "Built on a pier extending into the St. Lawrence River for Expo 67, creating a dense urban village on the waterfront.",
     program: "158 residential units ranging from 1 to 4 bedrooms, gardens, communal amenities",
     awards: "National Historic Site of Canada 2009",
     tags: ["brutalist", "modular", "prefab", "iconic", "experimental", "terrace"],
-    sources: ["archdaily.com", "dezeen.com", "archello.com"],
-    image_cover: "https://images.adsttc.com/media/images/5cec/59e6/284d/d1fd/4800/008d/large_jpg/GettyImages-515082046.jpg",
-    image_2: "https://images.adsttc.com/media/images/5cec/5a1d/284d/d1fd/4800/0090/large_jpg/GettyImages-182704045.jpg",
-    image_3: "https://images.adsttc.com/media/images/5cec/5a4e/284d/d1fd/4800/0092/large_jpg/GettyImages-182698861.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/86872/habitat-67-moshe-safdie" },
+      { label: "Dezeen", url: "https://www.dezeen.com/tag/habitat-67/" },
+      { label: "Archello", url: "https://archello.com/project/habitat-67" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Habitat+67",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Section+View",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Terrace+Garden",
     last_updated: "2025-01-10"
   },
   {
@@ -97,20 +97,20 @@ const PROJECTS = [
     total_area: "61,000 sqm",
     floors: "10",
     concept: "Two loops of housing interlock in a figure-eight plan, creating a continuous sloping promenade from street level to the rooftop. The form combines the density of a city block with the intimacy of a townhouse neighbourhood.",
-    key_design_moves: [
-      "Figure-8 plan creates two distinct courtyard identities",
-      "Continuous sloping bike and pedestrian path from ground to roof",
-      "Ground floor commercial activates street edges"
-    ],
+    key_design_moves: ["Figure-8 plan creates two distinct courtyard identities","Continuous sloping bike and pedestrian path from ground to roof","Ground floor commercial activates street edges"],
     materials: ["Brick", "Glass", "Steel", "Concrete"],
-    site_strategy: "Located in Ørestad, a new district south of Copenhagen, the building creates its own urban scale and internal street life in an otherwise sparse suburban context.",
+    site_strategy: "Located in Orestad, a new district south of Copenhagen, the building creates its own urban scale and internal street life in an otherwise sparse suburban context.",
     program: "476 apartments, penthouses, commercial units, offices at ground level",
     awards: "World Architecture Festival — Best Residential Building 2011",
     tags: ["mixed-use", "figure-eight", "nordic", "BIG", "promenade", "rooftop"],
-    sources: ["archdaily.com", "dezeen.com", "big.dk"],
-    image_cover: "https://images.adsttc.com/media/images/5226/7c55/e8e4/4e00/0001/00ac/large_jpg/stringio.jpg",
-    image_2: "https://images.adsttc.com/media/images/5226/7d6b/e8e4/4e00/0001/00b6/large_jpg/stringio.jpg",
-    image_3: "https://images.adsttc.com/media/images/5226/7d1c/e8e4/4e00/0001/00b2/large_jpg/stringio.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/107101/8-house-big" },
+      { label: "Dezeen", url: "https://www.dezeen.com/2010/10/26/8-house-by-big/" },
+      { label: "BIG", url: "https://big.dk/projects/8-house" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=8+House+BIG",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Figure+8+Plan",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Promenade",
     last_updated: "2025-01-10"
   },
   {
@@ -125,20 +125,19 @@ const PROJECTS = [
     total_area: "Not Available",
     floors: "2",
     concept: "A second application of Elemental's half-a-house strategy adapted to a Mexican context — families occupy one half of a two-storey structure with structural provisions enabling them to complete the other half over time.",
-    key_design_moves: [
-      "Half-built party wall structure enables self-completion",
-      "Open ground floor framing allows flexible future infill",
-      "Dense site layout maximises unit count within budget"
-    ],
+    key_design_moves: ["Half-built party wall structure enables self-completion","Open ground floor framing allows flexible future infill","Dense site layout maximises unit count within budget"],
     materials: ["Reinforced concrete", "Masonry", "Steel frame"],
     site_strategy: "Urban infill site within the city, maintaining resident access to existing urban networks and employment.",
     program: "70 incremental residential units with self-build expansion capacity",
     awards: "Not Available",
     tags: ["incremental", "social", "mexico", "affordable", "self-build", "elemental"],
-    sources: ["archdaily.com", "plataformaarquitectura.cl"],
-    image_cover: "https://images.adsttc.com/media/images/5596/14c9/e58e/ce26/1b00/002e/large_jpg/PORTADA_monterrey.jpg",
-    image_2: "https://images.adsttc.com/media/images/5596/14d8/e58e/ce26/1b00/002f/large_jpg/monterrey2.jpg",
-    image_3: "https://images.adsttc.com/media/images/5596/14e6/e58e/ce26/1b00/0030/large_jpg/monterrey3.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/82424/monterrey-housing-elemental" },
+      { label: "Plataforma Arquitectura", url: "https://www.plataformaarquitectura.cl/cl/02-57076/vivienda-monterrey-elemental" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Monterrey+Housing",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Half+House",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Street+View",
     last_updated: "2025-01-10"
   },
   {
@@ -153,20 +152,20 @@ const PROJECTS = [
     total_area: "14,000 sqm",
     floors: "6",
     concept: "A perforated bamboo screen wraps the entire building facade, acting as a climatic filter that provides solar shading and privacy while maintaining ventilation — a low-tech ecological strategy embedded in a high-density urban block.",
-    key_design_moves: [
-      "Continuous bamboo screen as climatic and aesthetic envelope",
-      "Sliding screen panels allow residents to control privacy and light",
-      "Courtyard block typology adapted for Mediterranean climate"
-    ],
+    key_design_moves: ["Continuous bamboo screen as climatic and aesthetic envelope","Sliding screen panels allow residents to control privacy and light","Courtyard block typology adapted for Mediterranean climate"],
     materials: ["Bamboo", "Concrete", "Glass", "Steel"],
     site_strategy: "Inserted into the Carabanchel social housing development on Madrid's southern periphery, the bamboo facade creates identity within a repetitive urban fabric.",
     program: "100 social housing units with communal courtyard and ground floor amenities",
     awards: "Not Available",
     tags: ["social", "facade", "bamboo", "mediterranean", "FOA", "screen"],
-    sources: ["archdaily.com", "dezeen.com", "divisare.com"],
-    image_cover: "https://images.adsttc.com/media/images/5026/e9f8/28ba/0d12/1500/00ac/large_jpg/stringio.jpg",
-    image_2: "https://images.adsttc.com/media/images/5026/e9e8/28ba/0d12/1500/00aa/large_jpg/stringio.jpg",
-    image_3: "https://images.adsttc.com/media/images/5026/e9f0/28ba/0d12/1500/00ab/large_jpg/stringio.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/11138/carabanchel-housing-foreign-office-architects" },
+      { label: "Dezeen", url: "https://www.dezeen.com/2007/09/10/carabanchel-housing-by-foreign-office-architects/" },
+      { label: "Divisare", url: "https://divisare.com/projects/carabanchel-social-housing" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Carabanchel+Housing",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Bamboo+Screen",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Courtyard",
     last_updated: "2025-01-10"
   },
   {
@@ -181,20 +180,20 @@ const PROJECTS = [
     total_area: "17,000 sqm",
     floors: "10",
     concept: "A city within a building — Silodam stacks diverse housing typologies, tenures and sizes in a grid of neighbourhoods, each with its own identity expressed through facade colour and material. The mix replicates urban diversity in a single structure.",
-    key_design_moves: [
-      "Grid of 'mini neighbourhoods' each with distinct facade treatment",
-      "Mixed tenure — social, private, live-work — within one structure",
-      "Public walkways and shared decks thread through the building"
-    ],
+    key_design_moves: ["Grid of mini neighbourhoods each with distinct facade treatment","Mixed tenure — social, private, live-work — within one structure","Public walkways and shared decks thread through the building"],
     materials: ["Steel", "Timber", "Glass", "Aluminium cladding"],
     site_strategy: "Cantilevered over the IJ waterway on a former industrial pier, the building reads as a moored vessel and activates Amsterdam's western docklands.",
     program: "157 units across 8 housing typologies, live-work units, communal spaces, commercial",
     awards: "Not Available",
     tags: ["mixed-use", "MVRDV", "waterfront", "colourful", "neighbourhood", "amsterdam"],
-    sources: ["archdaily.com", "mvrdv.nl", "dezeen.com"],
-    image_cover: "https://images.adsttc.com/media/images/5026/f55e/28ba/0d12/1500/0175/large_jpg/stringio.jpg",
-    image_2: "https://images.adsttc.com/media/images/5026/f56a/28ba/0d12/1500/0176/large_jpg/stringio.jpg",
-    image_3: "https://images.adsttc.com/media/images/5026/f572/28ba/0d12/1500/0177/large_jpg/stringio.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/104872/silodam-mvrdv" },
+      { label: "MVRDV", url: "https://www.mvrdv.nl/projects/111/silodam" },
+      { label: "Dezeen", url: "https://www.dezeen.com/tag/mvrdv/" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Silodam+MVRDV",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Facade+Grid",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Waterfront",
     last_updated: "2025-01-10"
   },
   {
@@ -209,20 +208,20 @@ const PROJECTS = [
     total_area: "3,091 sqm",
     floors: "13",
     concept: "The physical embodiment of Japanese Metabolism — replaceable prefabricated capsules plugged onto two concrete service cores, theorising a city of interchangeable parts that could be updated without demolishing the whole.",
-    key_design_moves: [
-      "140 capsules bolted independently to concrete shafts",
-      "Each capsule prefabricated off-site and crane-installed",
-      "Design anticipates capsule replacement every 25 years"
-    ],
+    key_design_moves: ["140 capsules bolted independently to concrete shafts","Each capsule prefabricated off-site and crane-installed","Design anticipates capsule replacement every 25 years"],
     materials: ["Precast concrete", "Corten steel capsule shells", "Porthole windows"],
-    site_strategy: "Located in Shimbashi, Tokyo's salarymen district, the tower served as pied-à-terre units for workers staying in the city during the week.",
+    site_strategy: "Located in Shimbashi, Tokyo's salarymen district, the tower served as pied-a-terre units for workers staying in the city during the week.",
     program: "140 single-occupancy capsule units, each 10 sqm with built-in appliances",
-    awards: "Demolished 2022 — designated culturally significant prior to demolition",
+    awards: "Designated culturally significant prior to demolition in 2022",
     tags: ["metabolism", "capsule", "japan", "iconic", "experimental", "prefab", "tokyo"],
-    sources: ["archdaily.com", "dezeen.com", "archello.com"],
-    image_cover: "https://images.adsttc.com/media/images/628b/2540/c616/3201/650a/3166/large_jpg/nakagin-capsule-tower-kisho-kurokawa-shimbashi-tokyo-japan_3.jpg",
-    image_2: "https://images.adsttc.com/media/images/628b/2555/c616/3201/650a/3168/large_jpg/nakagin-capsule-tower-kisho-kurokawa-shimbashi-tokyo-japan_5.jpg",
-    image_3: "https://images.adsttc.com/media/images/628b/2564/c616/3201/650a/3169/large_jpg/nakagin-capsule-tower-kisho-kurokawa-shimbashi-tokyo-japan_6.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/110745/ad-classics-nakagin-capsule-tower-kisho-kurokawa" },
+      { label: "Dezeen", url: "https://www.dezeen.com/tag/nakagin-capsule-tower/" },
+      { label: "Archello", url: "https://archello.com/project/nakagin-capsule-tower" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Nakagin+Capsule+Tower",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Capsule+Detail",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Core+Structure",
     last_updated: "2025-01-10"
   },
   {
@@ -237,20 +236,20 @@ const PROJECTS = [
     total_area: "Not Available",
     floors: "16",
     concept: "A post-war vision of civilised urban living for working people — the estate combines high-rise and low-rise blocks around generously landscaped courts, with elevated walkways creating a pedestrian city above street level.",
-    key_design_moves: [
-      "Mix of 16-storey tower and lower perimeter blocks",
-      "Elevated pedestrian deck links all buildings",
-      "Community facilities including pool and sports hall embedded in estate"
-    ],
+    key_design_moves: ["Mix of 16-storey tower and lower perimeter blocks","Elevated pedestrian deck links all buildings","Community facilities including pool and sports hall embedded in estate"],
     materials: ["Reinforced concrete", "Brick", "Glass curtain wall"],
     site_strategy: "Built on a blitzed site in the City of London fringe, the estate introduced residential density adjacent to the financial district.",
     program: "559 residential units, community centre, swimming pool, sports facilities, nursery",
     awards: "Grade II* Listed Building",
     tags: ["brutalist", "public housing", "london", "post-war", "listed", "walkways"],
-    sources: ["archdaily.com", "e-architect.com", "dezeen.com"],
-    image_cover: "https://images.adsttc.com/media/images/5e5e/4f3b/b357/6520/1600/009b/large_jpg/GoldenLane_AW_068.jpg",
-    image_2: "https://images.adsttc.com/media/images/5e5e/4f4a/b357/6520/1600/009c/large_jpg/GoldenLane_AW_069.jpg",
-    image_3: "https://images.adsttc.com/media/images/5e5e/4f5a/b357/6520/1600/009d/large_jpg/GoldenLane_AW_070.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/tag/golden-lane-estate" },
+      { label: "e-architect", url: "https://www.e-architect.com/london/golden-lane-estate" },
+      { label: "Dezeen", url: "https://www.dezeen.com/tag/golden-lane-estate/" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Golden+Lane+Estate",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Walkway+Deck",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Courtyard",
     last_updated: "2025-01-10"
   },
   {
@@ -265,20 +264,19 @@ const PROJECTS = [
     total_area: "Not Available",
     floors: "8",
     concept: "A precisely ordered housing complex along the Neue Donau waterfront, where repetitive yet carefully proportioned facades create a coherent urban edge while internal organisation maximises views and cross-ventilation for every unit.",
-    key_design_moves: [
-      "Linear blocks oriented perpendicular to waterfront for view access",
-      "Consistent facade rhythm with subtle variation in balcony depth",
-      "Ground floor public path maintains waterfront permeability"
-    ],
+    key_design_moves: ["Linear blocks oriented perpendicular to waterfront for view access","Consistent facade rhythm with subtle variation in balcony depth","Ground floor public path maintains waterfront permeability"],
     materials: ["Render", "Concrete", "Aluminium windows", "Timber balconies"],
     site_strategy: "Positioned along the Neue Donau leisure waterway, the project forms part of Vienna's coordinated waterfront residential development strategy.",
     program: "220 residential units with ground floor commercial and direct waterfront access",
     awards: "Not Available",
     tags: ["waterfront", "vienna", "minimalist", "urban edge", "contemporary"],
-    sources: ["archdaily.com", "divisare.com"],
-    image_cover: "https://images.adsttc.com/media/images/5026/e0e0/28ba/0d12/1500/006e/large_jpg/stringio.jpg",
-    image_2: "https://images.adsttc.com/media/images/5026/e0ec/28ba/0d12/1500/006f/large_jpg/stringio.jpg",
-    image_3: "https://images.adsttc.com/media/images/5026/e0f8/28ba/0d12/1500/0070/large_jpg/stringio.jpg",
+    sources: [
+      { label: "Archdaily", url: "https://www.archdaily.com/tag/adolf-krischanitz" },
+      { label: "Divisare", url: "https://divisare.com/authors/adolf-krischanitz" }
+    ],
+    image_cover: "https://placehold.co/600x400/2a2a20/c8a96e?text=Wohnpark+Neue+Donau",
+    image_2: "https://placehold.co/300x200/3a3a30/c8a96e?text=Waterfront+Edge",
+    image_3: "https://placehold.co/300x200/3a3a30/c8a96e?text=Facade+Detail",
     last_updated: "2025-01-15"
   }
 ];
@@ -305,7 +303,6 @@ export default function NAref() {
   const [selected, setSelected] = useState(null);
   const [favourites, setFavourites] = useState([]);
   const [copied, setCopied] = useState(false);
-  const [imgErrors, setImgErrors] = useState({});
   const [activeTab, setActiveTab] = useState("all");
 
   const filtered = useMemo(() => {
@@ -333,49 +330,9 @@ export default function NAref() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const downloadPDF = () => {
+  const downloadTxt = () => {
     if (!selected) return;
-    const content = `
-NAref — Housing Architecture Reference
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-PROJECT: ${selected.name}
-ARCHITECT: ${selected.architect}
-YEAR: ${selected.year}
-LOCATION: ${selected.location}
-TYPOLOGY: ${selected.typology}
-STYLE: ${selected.style}
-UNITS: ${selected.units}
-TOTAL AREA: ${selected.total_area}
-FLOORS: ${selected.floors}
-
-CONCEPT
-${selected.concept}
-
-SITE STRATEGY
-${selected.site_strategy}
-
-KEY DESIGN MOVES
-${selected.key_design_moves.map((m, i) => `${i + 1}. ${m}`).join("\n")}
-
-MATERIALS
-${selected.materials.join(", ")}
-
-PROGRAM
-${selected.program}
-
-AWARDS
-${selected.awards}
-
-SOURCES
-${selected.sources.join(", ")}
-
-TAGS
-${selected.tags.join(", ")}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Generated by NAref — naref.vercel.app
-    `.trim();
+    const content = `NAref — Housing Architecture Reference\n${"=".repeat(50)}\n\nPROJECT: ${selected.name}\nARCHITECT: ${selected.architect}\nYEAR: ${selected.year}\nLOCATION: ${selected.location}\nTYPOLOGY: ${selected.typology}\nSTYLE: ${selected.style}\nUNITS: ${selected.units}\nTOTAL AREA: ${selected.total_area}\nFLOORS: ${selected.floors}\n\nCONCEPT\n${selected.concept}\n\nSITE STRATEGY\n${selected.site_strategy}\n\nKEY DESIGN MOVES\n${selected.key_design_moves.map((m, i) => `${i + 1}. ${m}`).join("\n")}\n\nMATERIALS\n${selected.materials.join(", ")}\n\nPROGRAM\n${selected.program}\n\nAWARDS\n${selected.awards}\n\nSOURCES\n${selected.sources.map(s => `${s.label}: ${s.url}`).join("\n")}\n\nTAGS\n${selected.tags.join(", ")}\n\n${"=".repeat(50)}\nGenerated by NAref`;
     const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -387,79 +344,31 @@ Generated by NAref — naref.vercel.app
   const lastUpdated = PROJECTS.reduce((a, b) => a.last_updated > b.last_updated ? a : b).last_updated;
 
   return (
-    <div style={{
-      fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, serif",
-      background: "#f5f0e8",
-      minHeight: "100vh",
-      color: "#1a1a14"
-    }}>
+    <div style={{ fontFamily: "'Palatino Linotype', 'Book Antiqua', Palatino, serif", background: "#f5f0e8", minHeight: "100vh", color: "#1a1a14" }}>
 
       {/* Top bar */}
-      <div style={{
-        background: "#1a1a14",
-        padding: "0 40px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        height: "52px"
-      }}>
+      <div style={{ background: "#1a1a14", padding: "0 40px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "52px" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
           <span style={{ fontSize: "18px", color: "#f5f0e8", letterSpacing: "3px", fontWeight: "400" }}>NAref</span>
           <span style={{ fontSize: "10px", color: "#5a5a4a", letterSpacing: "3px", textTransform: "uppercase" }}>Housing Archive</span>
         </div>
-        <div style={{ fontSize: "10px", color: "#5a5a4a", letterSpacing: "2px" }}>
-          LAST UPDATED: {lastUpdated}
-        </div>
+        <div style={{ fontSize: "10px", color: "#5a5a4a", letterSpacing: "2px" }}>LAST UPDATED: {lastUpdated}</div>
       </div>
 
       {/* Hero */}
-      <div style={{
-        padding: "48px 40px 36px",
-        borderBottom: "1px solid #ddd8cc",
-        background: "linear-gradient(180deg, #ede8e0 0%, #f5f0e8 100%)"
-      }}>
+      <div style={{ padding: "48px 40px 36px", borderBottom: "1px solid #ddd8cc", background: "linear-gradient(180deg, #ede8e0 0%, #f5f0e8 100%)" }}>
         <div style={{ maxWidth: "560px" }}>
-          <h1 style={{ margin: "0 0 8px", fontSize: "40px", fontWeight: "400", letterSpacing: "-1px", lineHeight: "1.1", color: "#1a1a14" }}>
-            Housing<br />Reference Library
-          </h1>
-          <p style={{ margin: "0 0 28px", fontSize: "14px", color: "#8a8a7a", lineHeight: "1.7", maxWidth: "440px" }}>
-            Structured architectural data for students — concept, materials, program, and design moves from the world's most significant housing projects.
-          </p>
-
-          {/* Search */}
+          <h1 style={{ margin: "0 0 8px", fontSize: "40px", fontWeight: "400", letterSpacing: "-1px", lineHeight: "1.1", color: "#1a1a14" }}>Housing<br />Reference Library</h1>
+          <p style={{ margin: "0 0 28px", fontSize: "14px", color: "#8a8a7a", lineHeight: "1.7", maxWidth: "440px" }}>Structured architectural data for students — concept, materials, program, and design moves from the world's most significant housing projects.</p>
           <div style={{ position: "relative", maxWidth: "480px" }}>
-            <input
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              placeholder="Search by project, architect, concept, or tag..."
-              style={{
-                width: "100%",
-                padding: "14px 48px 14px 18px",
-                border: "1px solid #ccc8bc",
-                background: "#fff",
-                fontSize: "13px",
-                fontFamily: "inherit",
-                color: "#1a1a14",
-                outline: "none",
-                boxSizing: "border-box",
-                letterSpacing: "0.3px"
-              }}
-            />
+            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search by project, architect, concept, or tag..." style={{ width: "100%", padding: "14px 48px 14px 18px", border: "1px solid #ccc8bc", background: "#fff", fontSize: "13px", fontFamily: "inherit", color: "#1a1a14", outline: "none", boxSizing: "border-box", letterSpacing: "0.3px" }} />
             <span style={{ position: "absolute", right: "16px", top: "50%", transform: "translateY(-50%)", color: "#aaa", fontSize: "16px" }}>⌕</span>
           </div>
         </div>
       </div>
 
       {/* Filters */}
-      <div style={{
-        padding: "16px 40px",
-        borderBottom: "1px solid #ddd8cc",
-        display: "flex",
-        gap: "24px",
-        alignItems: "center",
-        flexWrap: "wrap",
-        background: "#f5f0e8"
-      }}>
+      <div style={{ padding: "16px 40px", borderBottom: "1px solid #ddd8cc", display: "flex", gap: "24px", alignItems: "center", flexWrap: "wrap", background: "#f5f0e8" }}>
         {[
           { label: "Typology", value: typology, set: setTypology, options: TYPOLOGIES },
           { label: "Style", value: style, set: setStyle, options: STYLES },
@@ -467,135 +376,52 @@ Generated by NAref — naref.vercel.app
         ].map(f => (
           <div key={f.label} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <span style={{ fontSize: "10px", letterSpacing: "2px", color: "#8a8a7a", textTransform: "uppercase" }}>{f.label}</span>
-            <select
-              value={f.value}
-              onChange={e => f.set(e.target.value)}
-              style={{
-                padding: "6px 28px 6px 10px",
-                border: "1px solid #ccc8bc",
-                background: "#fff",
-                fontSize: "12px",
-                fontFamily: "inherit",
-                color: "#1a1a14",
-                cursor: "pointer",
-                outline: "none",
-                appearance: "none",
-                backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a8a7a'/%3E%3C/svg%3E\")",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "right 8px center"
-              }}
-            >
+            <select value={f.value} onChange={e => f.set(e.target.value)} style={{ padding: "6px 28px 6px 10px", border: "1px solid #ccc8bc", background: "#fff", fontSize: "12px", fontFamily: "inherit", color: "#1a1a14", cursor: "pointer", outline: "none", appearance: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a8a7a'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 8px center" }}>
               {f.options.map(o => <option key={o}>{o}</option>)}
             </select>
           </div>
         ))}
-
-        <div style={{ marginLeft: "auto", display: "flex", gap: "0" }}>
+        <div style={{ marginLeft: "auto", display: "flex" }}>
           {["all", "favourites"].map(tab => (
-            <button key={tab} onClick={() => setActiveTab(tab)} style={{
-              padding: "6px 16px",
-              background: activeTab === tab ? "#1a1a14" : "transparent",
-              color: activeTab === tab ? "#f5f0e8" : "#8a8a7a",
-              border: "1px solid #ccc8bc",
-              fontSize: "10px",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              fontFamily: "inherit",
-              marginLeft: "-1px"
-            }}>
+            <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: "6px 16px", background: activeTab === tab ? "#1a1a14" : "transparent", color: activeTab === tab ? "#f5f0e8" : "#8a8a7a", border: "1px solid #ccc8bc", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", cursor: "pointer", fontFamily: "inherit", marginLeft: "-1px" }}>
               {tab === "favourites" ? `★ Saved (${favourites.length})` : `All (${PROJECTS.length})`}
             </button>
           ))}
         </div>
-
-        <div style={{ fontSize: "11px", color: "#aaa8a0", letterSpacing: "1px" }}>
-          {filtered.length} project{filtered.length !== 1 ? "s" : ""}
-        </div>
+        <div style={{ fontSize: "11px", color: "#aaa8a0", letterSpacing: "1px" }}>{filtered.length} project{filtered.length !== 1 ? "s" : ""}</div>
       </div>
 
       <div style={{ display: "flex", minHeight: "calc(100vh - 260px)" }}>
 
         {/* Grid */}
-        <div style={{
-          flex: 1,
-          padding: "32px 40px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-          gap: "24px",
-          alignContent: "start"
-        }}>
+        <div style={{ flex: 1, padding: "32px 40px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "24px", alignContent: "start" }}>
           {filtered.length === 0 ? (
             <div style={{ gridColumn: "1/-1", textAlign: "center", padding: "80px 0", color: "#aaa" }}>
               <div style={{ fontSize: "32px", marginBottom: "16px" }}>◻</div>
               <div style={{ fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase" }}>No projects found</div>
             </div>
           ) : filtered.map(p => (
-            <div
-              key={p.id}
-              onClick={() => setSelected(p)}
-              style={{
-                background: "#fff",
-                border: selected?.id === p.id ? "2px solid #1a1a14" : "1px solid #ddd8cc",
-                cursor: "pointer",
-                transition: "all 0.15s",
-                overflow: "hidden"
-              }}
-            >
-              {/* Image */}
-              <div style={{ height: "180px", background: "#e8e4dc", overflow: "hidden", position: "relative" }}>
-                {!imgErrors[`${p.id}_cover`] ? (
-                  <img
-                    src={p.image_cover}
-                    alt={p.name}
-                    onError={() => setImgErrors(e => ({ ...e, [`${p.id}_cover`]: true }))}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
-                ) : (
-                  <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "#aaa", fontSize: "11px", letterSpacing: "2px" }}>
-                    NO IMAGE
-                  </div>
-                )}
-                {/* Fav button */}
-                <button
-                  onClick={e => toggleFav(p.id, e)}
-                  style={{
-                    position: "absolute", top: "10px", right: "10px",
-                    background: "rgba(255,255,255,0.9)",
-                    border: "none", width: "28px", height: "28px",
-                    cursor: "pointer", fontSize: "14px",
-                    display: "flex", alignItems: "center", justifyContent: "center"
-                  }}
-                >
+            <div key={p.id} onClick={() => setSelected(p)} style={{ background: "#fff", border: selected?.id === p.id ? "2px solid #1a1a14" : "1px solid #ddd8cc", cursor: "pointer", transition: "all 0.15s", overflow: "hidden" }}>
+              <div style={{ height: "180px", overflow: "hidden", position: "relative" }}>
+                <img src={p.image_cover} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <button onClick={e => toggleFav(p.id, e)} style={{ position: "absolute", top: "10px", right: "10px", background: "rgba(255,255,255,0.9)", border: "none", width: "28px", height: "28px", cursor: "pointer", fontSize: "14px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   {favourites.includes(p.id) ? "★" : "☆"}
                 </button>
-                {/* Typology badge */}
-                <div style={{
-                  position: "absolute", bottom: "10px", left: "10px",
-                  background: "rgba(26,26,20,0.85)", color: "#f5f0e8",
-                  fontSize: "9px", letterSpacing: "2px", padding: "4px 8px",
-                  textTransform: "uppercase"
-                }}>
-                  {p.typology}
-                </div>
+                <div style={{ position: "absolute", bottom: "10px", left: "10px", background: "rgba(26,26,20,0.85)", color: "#f5f0e8", fontSize: "9px", letterSpacing: "2px", padding: "4px 8px", textTransform: "uppercase" }}>{p.typology}</div>
               </div>
-
-              {/* Card body */}
               <div style={{ padding: "16px 18px 14px" }}>
                 <div style={{ fontSize: "15px", fontWeight: "400", marginBottom: "4px", lineHeight: "1.3" }}>{p.name}</div>
                 <div style={{ fontSize: "12px", color: "#8a8a7a", marginBottom: "10px" }}>{p.architect} · {p.year}</div>
-                <div style={{ fontSize: "11px", color: "#aaa8a0", marginBottom: "12px", lineHeight: "1.6", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                  {p.concept}
-                </div>
-                {/* Tags */}
+                <div style={{ fontSize: "11px", color: "#aaa8a0", marginBottom: "12px", lineHeight: "1.6", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{p.concept}</div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", marginBottom: "12px" }}>
                   {p.tags.slice(0, 3).map((t, i) => (
                     <span key={i} style={{ fontSize: "9px", letterSpacing: "1px", textTransform: "uppercase", padding: "2px 7px", border: "1px solid #ddd8cc", color: "#8a8a7a" }}>{t}</span>
                   ))}
                 </div>
-                {/* Source */}
-                <div style={{ fontSize: "10px", color: "#bbb8b0", letterSpacing: "1px", borderTop: "1px solid #eee8e0", paddingTop: "10px" }}>
-                  Source: {p.sources[0]}
+                <div style={{ fontSize: "10px", color: "#bbb8b0", letterSpacing: "1px", borderTop: "1px solid #eee8e0", paddingTop: "10px", display: "flex", gap: "8px", flexWrap: "wrap" }}>
+                  {p.sources.map((s, i) => (
+                    <a key={i} href={s.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{ color: "#c8a030", textDecoration: "none", fontSize: "10px" }}>↗ {s.label}</a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -604,66 +430,36 @@ Generated by NAref — naref.vercel.app
 
         {/* Detail panel */}
         {selected && (
-          <div style={{
-            width: "400px",
-            flexShrink: 0,
-            borderLeft: "1px solid #ddd8cc",
-            background: "#fff",
-            overflowY: "auto",
-            position: "sticky",
-            top: 0,
-            maxHeight: "calc(100vh - 52px)"
-          }}>
-            {/* Images */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", height: "220px" }}>
-              <div style={{ gridColumn: "1/-1", background: "#e8e4dc", overflow: "hidden" }}>
-                {!imgErrors[`${selected.id}_cover_detail`] ? (
-                  <img src={selected.image_cover} alt="" onError={() => setImgErrors(e => ({ ...e, [`${selected.id}_cover_detail`]: true }))} style={{ width: "100%", height: "150px", objectFit: "cover" }} />
-                ) : <div style={{ height: "150px", display: "flex", alignItems: "center", justifyContent: "center", color: "#aaa", fontSize: "11px" }}>NO IMAGE</div>}
+          <div style={{ width: "400px", flexShrink: 0, borderLeft: "1px solid #ddd8cc", background: "#fff", overflowY: "auto", position: "sticky", top: 0, maxHeight: "calc(100vh - 52px)" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px" }}>
+              <div style={{ gridColumn: "1/-1", overflow: "hidden" }}>
+                <img src={selected.image_cover} alt="" style={{ width: "100%", height: "150px", objectFit: "cover" }} />
               </div>
-              <div style={{ background: "#e8e4dc", overflow: "hidden", height: "68px" }}>
-                {!imgErrors[`${selected.id}_2`] ? (
-                  <img src={selected.image_2} alt="" onError={() => setImgErrors(e => ({ ...e, [`${selected.id}_2`]: true }))} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                ) : <div style={{ height: "100%", background: "#e0dcd4" }} />}
+              <div style={{ overflow: "hidden", height: "68px" }}>
+                <img src={selected.image_2} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
-              <div style={{ background: "#e8e4dc", overflow: "hidden", height: "68px" }}>
-                {!imgErrors[`${selected.id}_3`] ? (
-                  <img src={selected.image_3} alt="" onError={() => setImgErrors(e => ({ ...e, [`${selected.id}_3`]: true }))} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                ) : <div style={{ height: "100%", background: "#e0dcd4" }} />}
+              <div style={{ overflow: "hidden", height: "68px" }}>
+                <img src={selected.image_3} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </div>
             </div>
 
-            {/* Actions */}
             <div style={{ display: "flex", borderBottom: "1px solid #eee8e0" }}>
               {[
                 { label: copied ? "Copied!" : "Copy Data", action: copyData },
-                { label: "Download", action: downloadPDF },
+                { label: "Download", action: downloadTxt },
                 { label: favourites.includes(selected.id) ? "★ Saved" : "☆ Save", action: (e) => toggleFav(selected.id, { stopPropagation: () => {} }) }
               ].map((btn, i) => (
-                <button key={i} onClick={btn.action} style={{
-                  flex: 1, padding: "10px 0",
-                  background: "transparent", border: "none",
-                  borderRight: i < 2 ? "1px solid #eee8e0" : "none",
-                  fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase",
-                  color: "#8a8a7a", cursor: "pointer", fontFamily: "inherit"
-                }}>{btn.label}</button>
+                <button key={i} onClick={btn.action} style={{ flex: 1, padding: "10px 0", background: "transparent", border: "none", borderRight: i < 2 ? "1px solid #eee8e0" : "none", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", color: "#8a8a7a", cursor: "pointer", fontFamily: "inherit" }}>{btn.label}</button>
               ))}
             </div>
 
-            {/* Content */}
             <div style={{ padding: "24px" }}>
               <div style={{ fontSize: "10px", letterSpacing: "3px", color: "#c8a030", textTransform: "uppercase", marginBottom: "8px" }}>{selected.typology}</div>
               <h2 style={{ margin: "0 0 6px", fontSize: "20px", fontWeight: "400", lineHeight: "1.3" }}>{selected.name}</h2>
               <div style={{ fontSize: "13px", color: "#8a8a7a", marginBottom: "20px" }}>{selected.architect} · {selected.location} · {selected.year}</div>
 
-              {/* Stats */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "#eee8e0", marginBottom: "24px" }}>
-                {[
-                  { l: "Units", v: selected.units },
-                  { l: "Area", v: selected.total_area },
-                  { l: "Floors", v: selected.floors },
-                  { l: "Style", v: selected.style.split(" / ")[0] }
-                ].map((s, i) => (
+                {[{ l: "Units", v: selected.units }, { l: "Area", v: selected.total_area }, { l: "Floors", v: selected.floors }, { l: "Style", v: selected.style.split(" / ")[0] }].map((s, i) => (
                   <div key={i} style={{ background: "#fff", padding: "12px 14px" }}>
                     <div style={{ fontSize: "9px", letterSpacing: "2px", color: "#aaa", textTransform: "uppercase", marginBottom: "4px" }}>{s.l}</div>
                     <div style={{ fontSize: "13px", color: "#1a1a14" }}>{s.v}</div>
@@ -671,20 +467,13 @@ Generated by NAref — naref.vercel.app
                 ))}
               </div>
 
-              {/* Sections */}
-              {[
-                { title: "Concept", content: selected.concept },
-                { title: "Site Strategy", content: selected.site_strategy },
-                { title: "Program", content: selected.program },
-                { title: "Awards", content: selected.awards }
-              ].map(s => (
+              {[{ title: "Concept", content: selected.concept }, { title: "Site Strategy", content: selected.site_strategy }, { title: "Program", content: selected.program }, { title: "Awards", content: selected.awards }].map(s => (
                 <div key={s.title} style={{ marginBottom: "20px" }}>
                   <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "8px" }}>{s.title}</div>
                   <p style={{ margin: 0, fontSize: "12px", lineHeight: "1.8", color: "#4a4a3a" }}>{s.content}</p>
                 </div>
               ))}
 
-              {/* Design moves */}
               <div style={{ marginBottom: "20px" }}>
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Key Design Moves</div>
                 {selected.key_design_moves.map((m, i) => (
@@ -695,7 +484,6 @@ Generated by NAref — naref.vercel.app
                 ))}
               </div>
 
-              {/* Materials */}
               <div style={{ marginBottom: "20px" }}>
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Materials</div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
@@ -705,7 +493,6 @@ Generated by NAref — naref.vercel.app
                 </div>
               </div>
 
-              {/* Tags */}
               <div style={{ marginBottom: "20px" }}>
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Tags</div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
@@ -715,11 +502,10 @@ Generated by NAref — naref.vercel.app
                 </div>
               </div>
 
-              {/* Sources */}
               <div style={{ paddingTop: "16px", borderTop: "1px solid #eee8e0" }}>
                 <div style={{ fontSize: "9px", letterSpacing: "3px", color: "#aaa", textTransform: "uppercase", marginBottom: "10px" }}>Sources</div>
                 {selected.sources.map((s, i) => (
-                  <div key={i} style={{ fontSize: "11px", color: "#c8a030", marginBottom: "4px" }}>↗ {s}</div>
+                  <a key={i} href={s.url} target="_blank" rel="noreferrer" style={{ display: "block", fontSize: "11px", color: "#c8a030", marginBottom: "8px", textDecoration: "none" }}>↗ {s.label} — {s.url}</a>
                 ))}
               </div>
             </div>
