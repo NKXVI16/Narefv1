@@ -269,7 +269,7 @@ public class DataExporterWindow : Window
         string query = _searchBox.Text.Trim();
         foreach (TypeEntry type in ActiveCategory.Types)
         {
-            if (query.Length == 0 || type.TypeName.Contains(query, StringComparison.OrdinalIgnoreCase))
+            if (query.Length == 0 || type.TypeName.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0)
                 _visibleTypes.Add(type);
         }
         _typesCount.Text = $"Types: {_visibleTypes.Count}";

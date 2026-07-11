@@ -107,7 +107,7 @@ public static class CsvExporter
         value.ToString("F" + options.DecimalPlaces, CultureInfo.InvariantCulture);
 
     private static string Escape(string value) =>
-        value.Contains(',') || value.Contains('"') || value.Contains('\n')
+        value.IndexOfAny(new[] { ',', '"', '\n' }) >= 0
             ? "\"" + value.Replace("\"", "\"\"") + "\""
             : value;
 }

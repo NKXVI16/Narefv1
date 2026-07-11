@@ -17,7 +17,8 @@ three-panel Data Exporter workflow:
 
 ## Requirements
 
-- **Revit 2025 or 2026** (both run on .NET 8)
+- **Revit 2021–2026.** The target framework follows the Revit version automatically:
+  2025+ builds against .NET 8, 2024 and earlier against .NET Framework 4.8.
 - To build: [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
   (Visual Studio 2022 17.8+ includes it)
 
@@ -25,29 +26,21 @@ The Revit API assemblies come from the [Nice3point.Revit.Api](https://www.nuget.
 NuGet packages, so **no Revit installation is needed to compile**. The UI is WPF built in
 code (no XAML), so the project even cross-compiles on Linux/macOS CI.
 
-For **Revit 2024 and earlier** the API requires .NET Framework 4.8 — change
-`TargetFramework` to `net48` and `RevitVersion` accordingly in the `.csproj`
-(a couple of C# 12 conveniences may need downgrading).
-
 ## Build
 
 ```powershell
 cd revit-addin/NarefDataExporter
-dotnet build -c Release
+dotnet build -c Release                        # Revit 2025 (default)
+dotnet build -c Release -p:RevitVersion=2024   # Revit 2024
+dotnet build -c Release -p:RevitVersion=2026   # Revit 2026
 ```
 
 Output: `revit-addin/NarefDataExporter/bin/Release/NarefDataExporter.dll`
 
-To target a different Revit year (2026):
-
-```powershell
-dotnet build -c Release -p:RevitVersion=2026
-```
-
 ## Install
 
-Copy two things into your Revit add-ins folder
-(`%AppData%\Autodesk\Revit\Addins\2025\`):
+Copy two things into your Revit add-ins folder for your Revit year
+(`%AppData%\Autodesk\Revit\Addins\2024\`, `...\2025\`, etc.):
 
 ```
 %AppData%\Autodesk\Revit\Addins\2025\
