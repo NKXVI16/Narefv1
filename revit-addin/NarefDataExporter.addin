@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>NAref Data Exporter</Name>
+    <Assembly>NarefDataExporter\NarefDataExporter.dll</Assembly>
+    <AddInId>7d3f9a2e-4b61-4c8a-9f0d-2e5c8b1a6d47</AddInId>
+    <FullClassName>NarefDataExporter.App</FullClassName>
+    <VendorId>NAREF</VendorId>
+    <VendorDescription>NAref Tools — BOQ and QA-QC Data Exporter</VendorDescription>
+  </AddIn>
+</RevitAddIns>
