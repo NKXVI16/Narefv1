@@ -21,6 +21,7 @@ namespace NarefDataExporter.UI;
 /// The Data Exporter dialog: model categories on the left, a type table with
 /// Export / Itemize / QA-QC columns in the middle, export options on the right.
 /// Built in code (no XAML) so the project compiles on any OS.
+/// The window is modeless; Revit API work is marshalled through ExternalEventRunner.
 /// </summary>
 public class DataExporterWindow : Window
 {
@@ -31,10 +32,12 @@ public class DataExporterWindow : Window
     private static readonly Brush Line = Brush("#DDD8CC");
     private static readonly Brush Ok = Brush("#4A8A6A");
 
-    private readonly UIDocument _uiDocument;
-    private readonly List<CategoryGroup> _categories;
+    private readonly ExternalEventRunner _runner;
+    private string _documentTitle;
+    private List<CategoryGroup> _categories;
     private readonly ObservableCollection<TypeEntry> _visibleTypes = new();
     private bool _suppressSelectAll;
+    private readonly TextBlock _docTitleText = new() { FontSize = 12, VerticalAlignment = VerticalAlignment.Bottom, Margin = new Thickness(16, 0, 0, 2) };
 
     private readonly ListBox _categoryList = new() { BorderThickness = new Thickness(0), DisplayMemberPath = "Name" };
     private readonly CheckBox _selectAll = new() { Content = "Select all", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(0, 0, 12, 0) };
@@ -68,10 +71,13 @@ public class DataExporterWindow : Window
     private readonly TextBlock _previewVolume = new() { FontSize = 12, Foreground = Body };
     private readonly TextBlock _statusText = new() { VerticalAlignment = VerticalAlignment.Center, Foreground = Ok, FontSize = 12 };
 
-    public DataExporterWindow(UIDocument uiDocument, List<CategoryGroup> categories)
+    public DataExporterWindow(string documentTitle, List<CategoryGroup> categories, ExternalEventRunner runner)
     {
-        _uiDocument = uiDocument;
+        _documentTitle = documentTitle;
         _categories = categories;
+        _runner = runner;
+        _docTitleText.Foreground = Muted;
+        _docTitleText.Text = documentTitle;
 
         Title = "Data Exporter — BOQ and QA-QC export";
         Width = 980; Height = 620; MinWidth = 860; MinHeight = 520;
@@ -107,7 +113,7 @@ public class DataExporterWindow : Window
         var header = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(2, 0, 0, 10) };
         header.Children.Add(new TextBlock { Text = "Data Exporter", FontSize = 18, Foreground = Ink, FontWeight = FontWeights.SemiBold });
         header.Children.Add(new TextBlock { Text = "·  BOQ and QA-QC export", FontSize = 12, Foreground = Muted, VerticalAlignment = VerticalAlignment.Bottom, Margin = new Thickness(10, 0, 0, 2) });
-        header.Children.Add(new TextBlock { Text = _uiDocument.Document.Title, FontSize = 12, Foreground = Muted, VerticalAlignment = VerticalAlignment.Bottom, Margin = new Thickness(16, 0, 0, 2) });
+        header.Children.Add(_docTitleText);
         Grid.SetRow(header, 0);
         root.Children.Add(header);
 
@@ -130,6 +136,7 @@ public class DataExporterWindow : Window
         footer.Children.Add(_statusText);
 
         var buttons = new StackPanel { Orientation = Orientation.Horizontal };
+        buttons.Children.Add(FooterButton("Refresh Model Data", RefreshModelData));
         buttons.Children.Add(FooterButton("Highlight Selected Category", HighlightCategory));
         var exportButton = FooterButton("Export", Export);
         exportButton.Background = Ink;
@@ -304,12 +311,37 @@ public class DataExporterWindow : Window
     private void HighlightCategory()
     {
         if (ActiveCategory is null) return;
-        var ids = new FilteredElementCollector(_uiDocument.Document)
-            .OfCategoryId(new ElementId(ActiveCategory.CategoryId))
-            .WhereElementIsNotElementType()
-            .ToElementIds();
-        _uiDocument.Selection.SetElementIds(ids);
-        _statusText.Text = $"{ids.Count} element(s) of \"{ActiveCategory.Name}\" selected in the model.";
+        long categoryId = ActiveCategory.CategoryId;
+        string categoryName = ActiveCategory.Name;
+
+        // The window is modeless, so Revit API calls must run inside an API context.
+        _runner.Run(app =>
+        {
+            UIDocument? uiDocument = app.ActiveUIDocument;
+            if (uiDocument is null) return;
+            var ids = new FilteredElementCollector(uiDocument.Document)
+                .OfCategoryId(new ElementId(categoryId))
+                .WhereElementIsNotElementType()
+                .ToElementIds();
+            uiDocument.Selection.SetElementIds(ids);
+            _statusText.Text = $"{ids.Count} element(s) of \"{categoryName}\" selected in the model.";
+        });
+    }
+
+    private void RefreshModelData()
+    {
+        _runner.Run(app =>
+        {
+            UIDocument? uiDocument = app.ActiveUIDocument;
+            if (uiDocument is null) return;
+            _documentTitle = uiDocument.Document.Title;
+            _categories = QuantityCollector.Collect(uiDocument.Document);
+            _docTitleText.Text = _documentTitle;
+            _categoryList.ItemsSource = _categories;
+            if (_categories.Count > 0) _categoryList.SelectedIndex = 0;
+            RefreshVisibleTypes();
+            _statusText.Text = $"Model data refreshed from \"{_documentTitle}\".";
+        });
     }
 
     private void Export()
@@ -342,7 +374,7 @@ public class DataExporterWindow : Window
         var dialog = new SaveFileDialog
         {
             Filter = "CSV files (*.csv)|*.csv",
-            FileName = $"{(isBoq ? "BOQ" : "QAQC")}_{_uiDocument.Document.Title}_{DateTime.Now:yyyy-MM-dd}.csv",
+            FileName = $"{(isBoq ? "BOQ" : "QAQC")}_{_documentTitle}_{DateTime.Now:yyyy-MM-dd}.csv",
         };
         if (dialog.ShowDialog(this) != true) return;
 

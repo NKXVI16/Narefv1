@@ -10,8 +10,17 @@ namespace NarefDataExporter;
 [Transaction(TransactionMode.ReadOnly)]
 public class DataExporterCommand : IExternalCommand
 {
+    // The window is modeless so Revit stays usable; keep a single instance.
+    private static DataExporterWindow? _window;
+
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
+        if (_window is { IsLoaded: true })
+        {
+            _window.Activate();
+            return Result.Succeeded;
+        }
+
         UIDocument uiDocument = commandData.Application.ActiveUIDocument;
         if (uiDocument?.Document is not Document doc)
         {
@@ -26,9 +35,16 @@ public class DataExporterCommand : IExternalCommand
             return Result.Cancelled;
         }
 
-        var window = new DataExporterWindow(uiDocument, categories);
+        var runner = new ExternalEventRunner();
+        var window = new DataExporterWindow(doc.Title, categories, runner);
         _ = new WindowInteropHelper(window) { Owner = commandData.Application.MainWindowHandle };
-        window.ShowDialog();
+        window.Closed += (_, _) =>
+        {
+            _window = null;
+            runner.Dispose();
+        };
+        _window = window;
+        window.Show();
 
         return Result.Succeeded;
     }
