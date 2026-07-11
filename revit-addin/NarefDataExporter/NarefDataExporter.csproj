@@ -33,6 +33,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsBase" />
     <Reference Include="System.Xaml" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net48'">
     <FrameworkReference Include="Microsoft.WindowsDesktop.App.WPF" />

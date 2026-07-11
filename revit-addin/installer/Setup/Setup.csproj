@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- .NET Framework 4.8 ships with every Windows 10/11, so the installer
+         is a single small exe with no runtime prerequisites. -->
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>NarefDataExporterSetup</AssemblyName>
+    <RootNamespace>NarefDataExporter.Setup</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- The add-in binaries are embedded into the installer. Stage them first:
+         dotnet build ../../NarefDataExporter -c Release -p:RevitVersion=2024 -o payload/2024
+         dotnet build ../../NarefDataExporter -c Release -p:RevitVersion=2025 -o payload/2025
+         cp ../../NarefDataExporter.addin payload/ -->
+  <ItemGroup>
+    <EmbeddedResource Include="payload/2024/NarefDataExporter.dll" LogicalName="payload.2024.NarefDataExporter.dll" />
+    <EmbeddedResource Include="payload/2025/NarefDataExporter.dll" LogicalName="payload.2025.NarefDataExporter.dll" />
+    <EmbeddedResource Include="payload/NarefDataExporter.addin" LogicalName="payload.NarefDataExporter.addin" />
+  </ItemGroup>
+
+  <Target Name="EnsurePayload" BeforeTargets="CoreCompile">
+    <Error Condition="!Exists('payload/2024/NarefDataExporter.dll') OR !Exists('payload/2025/NarefDataExporter.dll') OR !Exists('payload/NarefDataExporter.addin')"
+           Text="Installer payload missing. Build the add-in into payload/ first — see the comment in Setup.csproj." />
+  </Target>
+
+</Project>

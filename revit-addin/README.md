@@ -37,7 +37,28 @@ dotnet build -c Release -p:RevitVersion=2026   # Revit 2026
 
 Output: `revit-addin/NarefDataExporter/bin/Release/NarefDataExporter.dll`
 
-## Install
+## Install with the installer (recommended)
+
+Download `NarefDataExporterSetup.exe` from the repository's
+[Releases page](https://github.com/NKXVI16/Narefv1/releases/latest) and run it.
+It detects your installed Revit versions (2024–2026) from their Addins folders and
+installs the matching build into each — no admin rights needed. Run it with
+`/uninstall` to remove the add-in.
+
+If Windows SmartScreen warns about an unrecognised app, click **More info → Run anyway**
+(the installer is unsigned).
+
+### Updates
+
+In Revit, **NAref Tools → QC Panel → Check Updates** compares the installed version
+against the latest GitHub release and opens the download page when a newer one exists.
+Close Revit and run the new installer — it replaces the files in place.
+
+Publishing a new version is automated: push a tag like `v1.1.0` and the
+`Release Installer` GitHub Actions workflow builds both Revit variants, embeds them
+into a fresh `NarefDataExporterSetup.exe`, and attaches it to a GitHub release.
+
+## Install manually
 
 Copy two things into your Revit add-ins folder for your Revit year
 (`%AppData%\Autodesk\Revit\Addins\2024\`, `...\2025\`, etc.):
@@ -66,16 +87,30 @@ Start Revit, accept the add-in security prompt once, open a model, and find
 ```
 revit-addin/
 ├── NarefDataExporter.addin              Add-in manifest (copy to Addins folder)
-└── NarefDataExporter/
-    ├── NarefDataExporter.csproj
-    ├── App.cs                           IExternalApplication — ribbon tab & button
-    ├── DataExporterCommand.cs           IExternalCommand — collects data, shows dialog
-    ├── Services/
-    │   ├── QuantityModel.cs             InstanceQuantity / TypeEntry / CategoryGroup
-    │   ├── QuantityCollector.cs         Revit API → quantities (levels, metric units)
-    │   └── CsvExporter.cs               BOQ + QA-QC table building and CSV writing
-    └── UI/
-        └── DataExporterWindow.cs        WPF dialog (code-built, three-panel layout)
+├── NarefDataExporter/
+│   ├── NarefDataExporter.csproj
+│   ├── App.cs                           IExternalApplication — ribbon tab & buttons
+│   ├── DataExporterCommand.cs           IExternalCommand — collects data, shows dialog
+│   ├── CheckUpdatesCommand.cs           Compares installed version to latest release
+│   ├── Services/
+│   │   ├── QuantityModel.cs             InstanceQuantity / TypeEntry / CategoryGroup
+│   │   ├── QuantityCollector.cs         Revit API → quantities (levels, metric units)
+│   │   ├── CsvExporter.cs               BOQ + QA-QC table building and CSV writing
+│   │   └── UpdateChecker.cs             GitHub latest-release version lookup
+│   └── UI/
+│       └── DataExporterWindow.cs        WPF dialog (code-built, three-panel layout)
+└── installer/
+    └── Setup/                           Console installer (net48, payloads embedded)
+```
+
+To build the installer locally:
+
+```powershell
+cd revit-addin
+dotnet build NarefDataExporter -c Release -p:RevitVersion=2024 -o installer/Setup/payload/2024
+dotnet build NarefDataExporter -c Release -p:RevitVersion=2025 -o installer/Setup/payload/2025
+Copy-Item NarefDataExporter.addin installer/Setup/payload/
+dotnet build installer/Setup -c Release
 ```
 
 ## How quantities are read

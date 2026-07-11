@@ -12,17 +12,29 @@ public class App : IExternalApplication
         application.CreateRibbonTab(tabName);
         RibbonPanel panel = application.CreateRibbonPanel(tabName, "QC Panel");
 
-        var buttonData = new PushButtonData(
+        string assemblyPath = Assembly.GetExecutingAssembly().Location;
+
+        var exporterButton = new PushButtonData(
             "NarefDataExporter",
             "Data\nExporter",
-            Assembly.GetExecutingAssembly().Location,
+            assemblyPath,
             "NarefDataExporter.DataExporterCommand")
         {
             ToolTip = "Export BOQ (Bill of Quantities) and QA-QC reports to CSV",
             LongDescription = "Select model categories and types, choose Count / Length / Area / Volume, " +
                               "optionally break the BOQ down by level or itemize instances, and export to CSV.",
         };
-        panel.AddItem(buttonData);
+        panel.AddItem(exporterButton);
+
+        var updatesButton = new PushButtonData(
+            "NarefCheckUpdates",
+            "Check\nUpdates",
+            assemblyPath,
+            "NarefDataExporter.CheckUpdatesCommand")
+        {
+            ToolTip = "Check GitHub for a newer version of the Data Exporter",
+        };
+        panel.AddItem(updatesButton);
 
         return Result.Succeeded;
     }

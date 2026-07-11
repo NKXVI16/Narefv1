@@ -1,0 +1,57 @@
+name: Release Installer
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Determine version
+        id: ver
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+            echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=0.0.0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build add-in for Revit 2024
+        run: dotnet build revit-addin/NarefDataExporter -c Release -p:RevitVersion=2024 -p:Version=${{ steps.ver.outputs.version }} -o revit-addin/installer/Setup/payload/2024
+
+      - name: Build add-in for Revit 2025
+        run: dotnet build revit-addin/NarefDataExporter -c Release -p:RevitVersion=2025 -p:Version=${{ steps.ver.outputs.version }} -o revit-addin/installer/Setup/payload/2025
+
+      - name: Stage add-in manifest
+        run: Copy-Item revit-addin/NarefDataExporter.addin revit-addin/installer/Setup/payload/
+
+      - name: Build installer
+        run: dotnet build revit-addin/installer/Setup -c Release -p:Version=${{ steps.ver.outputs.version }} -o out/installer
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NarefDataExporterSetup
+          path: out/installer/NarefDataExporterSetup.exe
+
+      - name: Create GitHub release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release create "$env:GITHUB_REF_NAME"
+          out/installer/NarefDataExporterSetup.exe
+          --title "NAref Data Exporter $env:GITHUB_REF_NAME"
+          --generate-notes
