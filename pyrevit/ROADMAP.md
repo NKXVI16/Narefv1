@@ -9,8 +9,8 @@ pushbutton inside `NarefTools.extension`.
 |-----|-------------|------|-------|--------|
 | 1 | Jul 10 | 3D Isolation Trap — isolate selection in a dedicated 3D view with section box | QA Tools | ✅ Done |
 | 1 | Jul 10 | Taggles Shame — report untagged elements in the active view | QA Tools | ✅ Done |
-| 2 | Jul 11 | WarningsSnitch — extract all model warnings, group by severity, export to CSV | QA Tools | ⏳ Planned |
-| 2 | Jul 11 | Workset Grabber — list worksets with element counts, select/review elements by workset | Worksets | ⏳ Planned |
+| 2 | Jul 11 | WarningsSnitch — extract all model warnings, group by severity, export to CSV | QA Tools | ✅ Done |
+| 2 | Jul 11 | Workset Grabber — list worksets with element counts, select/review elements by workset | Worksets | ✅ Done |
 | 3 | Jul 12 | Click Counter — sequential numbering (prefix + increment) by clicking elements, with ISelectionFilter | Modify | ⏳ Planned |
 | 3 | Jul 12 | Lazy Sheet Creator — pick views, create sheet with chosen title block, place views automatically | Sheets | ⏳ Planned |
 | 4 | Jul 13 | Workset Police Dept — QA rules for workset assignment, batch-fix wrong assignments, CSV report | Worksets | ⏳ Planned |
@@ -30,12 +30,12 @@ pushbutton inside `NarefTools.extension`.
 ### 3. WarningsSnitch
 - `doc.GetWarnings()` → `FailureMessage.GetDescriptionText()`,
   `GetFailingElements()`. Group by description, count, linkified report,
-  CSV export via `script.get_output()` + `csv` module.
+  CSV export via shared `naref_utils.export_rows_to_csv`.
 
 ### 4. Workset Grabber
 - `FilteredWorksetCollector` (`WorksetKind.UserWorkset`), element counts
-  via `ElementWorksetFilter`, select-by-workset, CSV export.
-  Must check `doc.IsWorkshared` first.
+  via `ElementWorksetFilter`, select-by-workset, category/type filtering,
+  clickable report, CSV export. Must check `doc.IsWorkshared` first.
 
 ### 5. Click Counter
 - `uidoc.Selection.PickObject` loop + `ISelectionFilter` restricted to a

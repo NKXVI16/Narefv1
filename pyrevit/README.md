@@ -29,5 +29,11 @@ A **NarefTools** tab will appear in the Revit ribbon.
 |------|--------------|
 | **3D Isolation Trap** | Isolates your current selection in a dedicated per-user 3D view, crops it with a section box, and jumps you into it. |
 | **Taggles Shame** | Scans the active view for elements missing tags (doors, windows, rooms, etc.) and prints a clickable report; optionally selects the offenders. |
+| **Warnings Snitch** | Groups all Revit model warnings by description, reports failing elements with clickable links, and optionally exports the QA data to CSV. |
+
+### Worksets panel
+| Tool | What it does |
+|------|--------------|
+| **Workset Grabber** | Lists user worksets with live element counts, filters by category and type, selects matching elements, and optionally exports the review to CSV. |
 
 More tools land daily per the roadmap.
