@@ -4,6 +4,11 @@ on:
   push:
     tags: ["v*"]
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (e.g. 1.0.0). Leave empty for a build-only run."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -21,11 +26,18 @@ jobs:
       - name: Determine version
         id: ver
         shell: bash
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
         run: |
           if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
             echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          elif [[ -n "$INPUT_VERSION" ]]; then
+            echo "version=${INPUT_VERSION#v}" >> "$GITHUB_OUTPUT"
+            echo "release=true" >> "$GITHUB_OUTPUT"
           else
             echo "version=0.0.0" >> "$GITHUB_OUTPUT"
+            echo "release=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Build add-in for Revit 2024
@@ -47,11 +59,13 @@ jobs:
           path: out/installer/NarefDataExporterSetup.exe
 
       - name: Create GitHub release
-        if: github.ref_type == 'tag'
+        if: steps.ver.outputs.release == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.ver.outputs.version }}
         run: >
-          gh release create "$env:GITHUB_REF_NAME"
+          gh release create "v$env:VERSION"
           out/installer/NarefDataExporterSetup.exe
-          --title "NAref Data Exporter $env:GITHUB_REF_NAME"
+          --target "$env:GITHUB_SHA"
+          --title "NAref Data Exporter v$env:VERSION"
           --generate-notes
